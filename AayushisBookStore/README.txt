@@ -21,3 +21,6 @@ Downloaded from the bootswatch
 Chnaged the properties in layout.cshtml.
 run it 
 phew it's properly working 
+2022-03-22
+Everything is working properly 
+now will add the dropdown menu
