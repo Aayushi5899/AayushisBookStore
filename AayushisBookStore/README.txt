@@ -27,3 +27,6 @@ now will add the dropdown menu
 Now the last part of part1
 add the project and modifing
 adding three projects
+
+Done with the slides 
+but still getting error not able to run and dropdown is not working
