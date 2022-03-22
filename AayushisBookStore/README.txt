@@ -24,3 +24,6 @@ phew it's properly working
 2022-03-22
 Everything is working properly 
 now will add the dropdown menu
+Now the last part of part1
+add the project and modifing
+adding three projects
