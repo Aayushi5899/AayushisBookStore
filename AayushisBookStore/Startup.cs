@@ -2,6 +2,7 @@ using AayushisBookStore.DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -53,13 +54,18 @@ namespace AayushisBookStore
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
-            });
+            _ = app.UseEndpoints(endpoints =>
+              {
+                  _ = NewMethod(endpoints);
+                  endpoints.MapRazorPages();
+              });
+        }
+
+        private static ControllerActionEndpointConventionBuilder NewMethod(IEndpointRouteBuilder endpoints)
+        {
+            return endpoints.MapControllerRoute(
+name: "default",
+pattern: "{area=Customer}{controller=Home}/{action=Index}/{id?}");
         }
     }
 }
