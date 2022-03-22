@@ -15,4 +15,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.14" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AayushisBooks.DataAccess\AayushisBooks.DataAccess.csproj" />
+    <ProjectReference Include="..\AayushisBooks.Models\AayushisBooks.Models.csproj" />
+  </ItemGroup>
+
 </Project>
