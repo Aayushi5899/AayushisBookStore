@@ -18,5 +18,7 @@ namespace AayushisBookStore.DataAccess.Data
     [Keyless]
     public class Category
     {
+        public object Id { get; internal set; }
+        public bool Name { get; internal set; }
     }
 }
