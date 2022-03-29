@@ -15,7 +15,7 @@ namespace AayushisBookStore.DataAccess.Data
 
         public DbSet<Category> Categories { get; set; }
     }
-
+    [Keyless]
     public class Category
     {
     }
