@@ -54,5 +54,7 @@ solution app extra file
 1 43 Did changes in IRepository file 
 3 41 Changed the Repository.cs file. 
 
+5 45 Made category file 
+5 46 And even update the file but getting error
 
 

@@ -10,10 +10,19 @@ namespace AayushisBooks.DataAccess.Repository
 {
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
-        private readonly ApplicationDbContext db;
+        private readonly ApplicationDbContext _db;
         public CategoryRepository(ApplicationDbContext db) : base(db)
         {
-            db = db;
+            _db = db;
+        }
+        public void Update(Category category)
+        {
+            var objFromDb = _db.Categories.FirstOrDefault(s => s.Id == category.Id);
+            if(objFromDb != null) //save changes if not null
+            {
+                objFromDb.Name = category > Name;
+                _db.SaveChanges();
+            }
         }
     }
 }
