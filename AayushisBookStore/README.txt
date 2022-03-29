@@ -52,6 +52,7 @@ solution app extra file
 1 29 Add the repository file in the dataaccess and add file repository file in it. and add a class inside it. 
 
 1 43 Did changes in IRepository file 
+3 41 Changed the Repository.cs file. 
 
 
 
