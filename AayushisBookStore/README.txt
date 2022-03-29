@@ -46,6 +46,8 @@ solution app extra file
 
 2022/03/29
 1243 Solve that error 
+1253 Add the migration file name entry
+
 
 
 
