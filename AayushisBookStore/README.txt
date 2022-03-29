@@ -49,6 +49,9 @@ solution app extra file
 1253 Add the migration file name entry
 1 19 add the class catrgory.cs class
      and add he migration
+1 29 Add the repository file in the dataaccess and add file repository file in it. and add a class inside it. 
+
+1 43 Did changes in IRepository file 
 
 
 
