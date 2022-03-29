@@ -1,4 +1,5 @@
 ﻿using AayushisBooks.DataAccess.Repository.IRepository;
+using AayushisBookStore.DataAccess.Data;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace AayushisBooks.DataAccess.Repository
 {
     class SP_Call : ISP_Call
     {
+        private ApplicationDbContext db;
+
+        public SP_Call(ApplicationDbContext db)
+        {
+            this.db = db;
+        }
+
         public void Dispose()
         {
             throw new NotImplementedException();

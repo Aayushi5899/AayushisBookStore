@@ -29,6 +29,7 @@ namespace AayushisBookStore
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<IUnitOfWork, IUnitOfWork>();
             services.AddControllersWithViews();
         }
 
@@ -67,5 +68,9 @@ namespace AayushisBookStore
 name: "default",
 pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
         }
+    }
+
+    internal interface IUnitOfWork
+    {
     }
 }
