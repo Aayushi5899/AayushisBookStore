@@ -1,12 +1,12 @@
-﻿using AayushisBookStore.DataAccess.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System Text;
 
 namespace AayushisBooks.DataAccess.Repository
 {
+    public interface IRepository<T> where T : class { 
     T Get(int id);
 
     IEnumerable<T> GetAll(
