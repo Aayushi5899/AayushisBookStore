@@ -1,53 +1,107 @@
 ﻿using AayushisBooks.DataAccess.Repository.IRepository;
-using AayushisBookStore.Areas.Admin.Controllers;
-using Microsoft.AspNetCore.Mvc;
+using AayushisBookStore.DataAccess.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
+using System.Text;
+using AayushisBooks.DataAccess.Repository;
 
-namespace AayushisBookStore.Areas.Admin.Controllers
+namespace AayushisBooks.DataAccess.Repository
 {
-    [Area("Admin")]
-    public class CategoryController : Controller
+    // Implements all the methods of the IRepository
+    public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public CategoryController(IUnitOfWork unitOfWork)
+        // modify the database w/ the db context
+        private readonly ApplicationDbContext _db;      // get the db instance using the constructor and DI 
+        internal DbSet<T> dbSet;
+        public Repository(ApplicationDbContext db)     // use hot keys C-T-O-R to build the constructor
         {
-            _unitOfWork = unitOfWork;
+            _db = db;
+            this.dbSet = _db.Set<T>();
         }
-        public IActionResult Index()
+        public void Add(T entity)
         {
-            return View();
-
+            dbSet.Add(entity);      // add context so classes correspond to the DbSet in ApplicationDbContext
         }
 
-        public IActionResult Upsert(int? id)
+        public T Get(int id)
         {
-            Category category = new();
-            if(id == null)
+            return dbSet.Find(id);
+        }
+
+        //public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null)
+        //{
+        // returns the IEnumerable based on the conditions of the query
+        //}
+
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedEnumerable<T>> orderBy = null, string includeProperties = null)
+        {
+            IQueryable<T> query = dbSet;
+            if (filter != null)
             {
-                return View(category);
+                query = query.Where(filter);
             }
-            category = _unitOfWork.Category.Get(id.GetValueOrDefault());
-            if (category == null)
+
+            if (includeProperties != null)
             {
-                return NotFound();
+                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
             }
-            return View();
+
+            if (orderBy != null)
+            {
+                return orderBy(query).ToList();
+            }
+            return query.ToList();
         }
 
-        #region API CALLS
-        [HttpGet]
-        public IActionResult GetAll()
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> oderBy = null, string includeProperties = null)
         {
-            var allObj = _unitOfWork.Category.GetAll();
-            return Json(new { data = allObj });
+            throw new NotImplementedException();
         }
-        #endregion
-    }
 
-    internal class Category
-    {
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null, string includeProperties = null)
+        {
+            IQueryable<T> query = dbSet;
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            if (includeProperties != null)
+            {
+                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
+
+            return query.FirstOrDefault();      // returns the IEnumerable based on the conditions of the query
+        }
+
+        public T GetFristOrDefault(Expression<Func<T, bool>> fillter = null, string includeProperties = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(int id)
+        {
+            T entity = dbSet.Find(id);
+            Remove(entity);
+        }
+
+        public void Remove(T entity)
+        {
+            dbSet.Remove(entity);
+        }
+
+        public void RemoveRange(IEnumerable<T> entity)
+        {
+            dbSet.RemoveRange(entity);
+        }
     }
 }

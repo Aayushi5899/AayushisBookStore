@@ -76,5 +76,8 @@ Not able to run the application having some breakdown error
 1214 Updated the layoout file
 
 12 46 Updated the category.js file
+ 
+
+ 12 27 When running the application having a break down error
 
 
