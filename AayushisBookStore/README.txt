@@ -43,6 +43,8 @@ solution app extra file
 >>>>>>> ab520b4509599d4b3ae35a1b0d967e87d808ad6e
 =======
 >>>>>>> ab520b4509599d4b3ae35a1b0d967e87d808ad6e
+2022/03/27
+Not able to run the application having some breakdown error
 
 2022/03/29
 1243 Solve that error 
@@ -68,6 +70,9 @@ solution app extra file
 
 11 39 Trying to  do scaffolding but having error so not able to build
 
+2022/03/30
 12 09 still have the error still try to mange razor and updated the index.cshtml file
+
+1214 Updated the layoout file
 
 
