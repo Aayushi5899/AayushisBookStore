@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AayushisBooks.DataAccess.Repository.IRepository;
+using AayushisBookStore.Areas.Admin.Controllers;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +24,7 @@ namespace AayushisBookStore.Areas.Admin.Controllers
 
         public IActionResult Upsert(int? id)
         {
-            Category category = new Category();
+            Category category = new();
             if(id == null)
             {
                 return View(category);
@@ -43,5 +45,9 @@ namespace AayushisBookStore.Areas.Admin.Controllers
             return Json(new { data = allObj });
         }
         #endregion
+    }
+
+    internal class Category
+    {
     }
 }
