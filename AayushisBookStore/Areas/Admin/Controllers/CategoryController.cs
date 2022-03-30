@@ -14,19 +14,15 @@ namespace AayushisBookStore.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-
         public IActionResult Index()
         {
             return View();
         }
-
-        // API calls here
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll()
         {
-            // return Notfound();
-            var allObj = _unitOfWork.Category();
+            var allObj = _unitOfWork.Category.GetAll();
             return Json(new { data = allObj });
         }
         #endregion

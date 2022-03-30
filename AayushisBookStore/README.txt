@@ -68,4 +68,6 @@ solution app extra file
 
 11 39 Trying to  do scaffolding but having error so not able to build
 
+12 09 still have the error still try to mange razor and updated the index.cshtml file
+
 

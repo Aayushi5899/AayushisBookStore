@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AayushisBooks.DataAccess.Repository.IRepository
 {
-    interface IUnitOfWork
+    interface IUnitOfWork : IDisposable
     {
         ICategoryRepository Category { get; }
         ISP_Call SP_Call { get; }
