@@ -64,4 +64,6 @@ solution app extra file
 
 6 36 made the unit .cs file 
 
+11 04 Was having 7 error with the category respository.cs solved it
+
 
