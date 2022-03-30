@@ -26,7 +26,7 @@ namespace AayushisBookStore.Areas.Admin.Controllers
         public IActionResult GetAll()
         {
             // return Notfound();
-            var allObj = _unitOfWork.Category.GetAll();
+            var allObj = _unitOfWork.Category();
             return Json(new { data = allObj });
         }
         #endregion

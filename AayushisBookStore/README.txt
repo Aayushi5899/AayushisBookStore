@@ -66,4 +66,6 @@ solution app extra file
 
 11 04 Was having 7 error with the category respository.cs solved it
 
+11 39 Trying to  do scaffolding but having error so not able to build
+
 
