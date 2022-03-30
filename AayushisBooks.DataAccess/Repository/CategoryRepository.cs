@@ -48,7 +48,7 @@ namespace AayushisBooks.DataAccess.Repository
             var objFromDb = _db.Categories.FirstOrDefault(s => s.Id == category.Id);
             if(objFromDb != null) //save changes if not null
             {
-                objFromDb.Name = category> Name;
+                objFromDb.Name = category.Name;
                 int v = _db.SaveChanges();
             }
         }

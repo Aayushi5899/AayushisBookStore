@@ -16,12 +16,19 @@ namespace AayushisBooks.DataAccess.Repository
         {
             _db = db;
             Category = new CategoryRepository(_db);
-            SP_Call = new SP_Call(_db);
+            SetSP_Call(new SP_Call(_db));
         }
         public DataAccess.Repository.IRepository.ICategoryRepository Category { get; private set; }
-        public ISP_Call SP_Call(_get; private set;)
 
-            public void Dispose()
+        private static void SetSP_Call(ISP_Call value)
+        {
+            if (value is null)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+        }
+
+        public void Dispose()
         {
             _db.Dispose();
         }
@@ -32,11 +39,11 @@ namespace AayushisBooks.DataAccess.Repository
    
  }
 
-    internal class set
+    internal class Set
     {
     }
 
-    public class _get
+    public class Get
     {
     }
 }
