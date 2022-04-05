@@ -73,5 +73,6 @@ pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
     internal interface IUnitOfWork
     {
         object Category();
+        void Save();
     }
 }
