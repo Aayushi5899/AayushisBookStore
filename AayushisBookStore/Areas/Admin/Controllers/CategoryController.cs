@@ -18,6 +18,7 @@ namespace AyushisBookStore.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -44,15 +45,16 @@ namespace AyushisBookStore.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 object id = category.Id;
-                if (id
-                    == 0)
+                bool v = id
+                                    != 0;
+                if (v)
                 {
-                    object p = _unitOfWork.Category.Add(category);
-
+                    object p = _unitOfWork.Category.Update(category);
                 }
                 else
                 {
-                    object p = _unitOfWork.Category.Update(category);
+                    object p = _unitOfWork.Category.Add(category);
+
                 }
                 _unitOfWork.Save();
                 return RedirectToAction(nameof(Index));
