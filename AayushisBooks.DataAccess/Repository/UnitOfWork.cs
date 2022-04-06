@@ -16,9 +16,13 @@ namespace AayushisBooks.DataAccess.Repository
         {
             _db = db;
             Category = new CategoryRepository(_db);
+            CoverType = new CoverTypeRepository(_db);
+          
+
             SetSP_Call(new SP_Call(_db));
         }
         public DataAccess.Repository.IRepository.ICategoryRepository Category { get; private set; }
+        public CoverTypeRepository CoverType { get; }
 
         private static void SetSP_Call(ISP_Call value)
         {

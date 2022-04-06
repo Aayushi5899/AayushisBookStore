@@ -14,10 +14,7 @@ namespace AyushisBookStore.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public CategoryController(IUnitOfWork unitOfWork)
-        {
-            _unitOfWork = unitOfWork;
-        }
+        public CategoryController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
 
         public IActionResult Index()
         {
@@ -45,8 +42,7 @@ namespace AyushisBookStore.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 object id = category.Id;
-                bool v = id
-                                    != 0;
+                var v = id != 0;
                 if (v)
                 {
                     object p = _unitOfWork.Category.Update(category);

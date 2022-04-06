@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace AayushisBooks.DataAccess.Repository.IRepository
 {
-    interface IUnitOfWork : IDisposable
+    public interface ICoverTypeRepository : IRepository<CoverType>
     {
-        ICategoryRepository Category { get; }
-        ICoverTypeRepository CoverType { get; }
-        ISP_Call SP_Call { get; }
+        void Update(CoverType covertype);
     }
 }

@@ -95,5 +95,16 @@ ASP.NET core MVC web app w/ indival account autheication
 ---------------------------PART 2 DONE----------------------------------------
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~PART 3 STARTED~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+05/04/2022
 
+2300 : Starting with the Part1 of 3 
+     Creating the Covertype in Models class. 
+     Modify the class with the id and name. 
+
+06/04/2022
+
+0003 : Added the CoverTypeRepository in the Repository class
+       Added the ICoverTypeRepository in the IRepository class. 
+       
+0010 : Added the class in the UnitOfWork and IUnitofWork
 
