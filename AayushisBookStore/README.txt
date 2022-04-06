@@ -108,3 +108,13 @@ ASP.NET core MVC web app w/ indival account autheication
        
 0010 : Added the class in the UnitOfWork and IUnitofWork
 
+0303 : Having error migration for database 
+
+0308 : Adding the CRUD Operations
+       Add the cover type to NavBar
+       Add CoverType Controller
+       Cover Type View
+       Cover Type Upsert View 
+
+0315 : Add the Product.cs class in the model folder.
+       And modify it.
