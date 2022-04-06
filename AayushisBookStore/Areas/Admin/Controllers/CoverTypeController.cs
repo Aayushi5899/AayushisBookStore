@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AayushisBooks.DataAccess.Repository;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace AayushisBookStore.Areas.Admin.Controllers
                 }
                 else
                 {
-                    _unitOfWork.CoverType.Update(coverType);
+                    object p = _unitOfWork.CoverType.Update(coverType);
                 }
 
                 _unitOfWork.Save();
