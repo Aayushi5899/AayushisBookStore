@@ -60,7 +60,7 @@ namespace DipensBookStore.Areas.Admin.Controllers
             {
                 if (product.Id == 0)
                 {
-                    _unitOfWork.Product.Add(product);
+                    object p = _unitOfWork.Product.Add(product);
                 }
                 else
                 {

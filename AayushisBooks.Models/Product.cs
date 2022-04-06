@@ -9,6 +9,8 @@ namespace AayushisBooks.Models
 {
     public class Product
     {
+        public object Product;
+
         [Key]
         public int Id { get; set; }
         [Required]
