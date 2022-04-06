@@ -88,6 +88,10 @@ ASP.NET core MVC web app w/ indival account autheication
 2300 : Its working
        Breakdown error solve
 
+03/04/2022
+
+1000 : Having error with the upsert adding.
+
 ---------------------------PART 2 DONE----------------------------------------
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~PART 3 STARTED~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
