@@ -1,4 +1,5 @@
 ﻿using AayushisBooks.DataAccess.Repository.IRepository;
+using AayushisBooks.Models;
 using AayushisBookStore.DataAccess.Data;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,13 @@ namespace AayushisBooks.DataAccess.Repository
             _db = db;
             Category = new CategoryRepository(_db);
             CoverType = new CoverTypeRepository(_db);
-          
+            Product = new ProductRepository(_db);
 
             SetSP_Call(new SP_Call(_db));
         }
         public DataAccess.Repository.IRepository.ICategoryRepository Category { get; private set; }
         public CoverTypeRepository CoverType { get; }
+        public ProductRepository Product { get; }
 
         private static void SetSP_Call(ISP_Call value)
         {

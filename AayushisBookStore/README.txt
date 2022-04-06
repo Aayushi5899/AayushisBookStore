@@ -122,3 +122,18 @@ ASP.NET core MVC web app w/ indival account autheication
 0319 : Added that in the ApplicationDbContext.cs 
 
 0320 : Building error with the migration. 
+
+0326 : Adding the product to the Repository.
+       Adding the IProductRepository.
+       Adding the class.
+       Add the product to UnitOfWork
+       and IUnitofWork.
+
+0328 : Adding the product to the Admin Controller
+
+0332 : Modifying the ProductController 
+       Adding the link in the layout
+
+
+
+---------------------------PART 3 DONE----------------------------------------
