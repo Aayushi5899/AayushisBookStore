@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using AayushisBooks.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace AayushisBookStore.DataAccess.Data
 
         public DbSet<Category> Categories { get; set; }
         public object CoverTypes { get; internal set; }
+        public DbSet<Product> Products { get; set; }
     }
     [Keyless]
     public class Category

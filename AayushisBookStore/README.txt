@@ -118,3 +118,7 @@ ASP.NET core MVC web app w/ indival account autheication
 
 0315 : Add the Product.cs class in the model folder.
        And modify it.
+
+0319 : Added that in the ApplicationDbContext.cs 
+
+0320 : Building error with the migration. 
